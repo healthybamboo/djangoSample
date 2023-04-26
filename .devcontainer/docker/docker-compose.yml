@@ -5,6 +5,7 @@ services:
       restart: always
       container_name: db
       environment:
+          MYSQL_DATABASE: django_db
           MYSQL_ROOT_PASSWORD: root
           MYSQL_USER: django
           MYSQL_PASSWORD: password
