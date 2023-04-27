@@ -1,5 +1,5 @@
 # Mysql用のdockerFile
-FROM arm64v8/mysql:8.0-oracle  
+FROM mysql:8.0
 
 COPY ./db/my.cnf /etc/mysql/conf.d/my.cnf
 

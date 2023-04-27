@@ -4,6 +4,7 @@ services:
       build: ./mysql
       restart: always
       container_name: db
+      platform: linux/x86_64
       environment:
           MYSQL_DATABASE: django_db
           MYSQL_ROOT_PASSWORD: root
@@ -21,7 +22,7 @@ services:
       container_name: django
       build: ./python
       volumes:
-         - ../../:/usr/src/app
+         - ../:/usr/src/app
          - tmp:/run/mysqld
       restart: always
       ports:
