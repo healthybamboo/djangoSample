@@ -2,7 +2,7 @@ version: '3'
 services:
     mysql:
       build: ./.docker/mysql
-      restart: always
+      restart: unless-stopped
       container_name: db
       platform: linux/x86_64
       environment:
@@ -24,7 +24,7 @@ services:
       volumes:
          - ./:/usr/src/app
          - tmp:/run/mysqld
-      restart: always
+      restart: unless-stopped
       ports:
          - 8000:8000
       tty: true
